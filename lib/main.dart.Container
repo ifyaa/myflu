@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'flutter Demo',
+      theme:ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container (
+         
+          padding: EdgeInsets.all(8.0),
+          // constraints: BoxConstraints.expand(),
+          alignment: Alignment.center,
+          width: 200,
+          height: 200,
+          decoration: BoxDecoration(
+             color: Colors.blue,
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.red[100],
+                blurRadius: 4.0,
+                spreadRadius: 2.0,
+              )
+            ],
+            gradient: LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Colors.blue,
+                Colors.red
+              ]),
+    
+          ),
+            child: Text('Flutter Essintials', style: TextStyle(fontSize: 20, color: Colors.white),))),
+    );
+  }
+}
